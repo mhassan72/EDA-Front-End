@@ -1,14 +1,15 @@
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  signOut,
+  signOut as firebaseSignOut,
   onAuthStateChanged,
   User as FirebaseUser,
   GoogleAuthProvider,
   signInWithPopup,
   sendPasswordResetEmail,
   updateProfile,
-  getIdToken
+  getIdToken,
+  sendEmailVerification
 } from 'firebase/auth';
 import { auth } from '@/config/firebase';
 import { User } from '@/types';
@@ -72,9 +73,18 @@ export class AuthService {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       
       // Update profile with name
-      await updateProfile(userCredential.user, { displayName: name });
+      if (name) {
+        await updateProfile(userCredential.user, { displayName: name });
+      }
+      
+      // Send email verification
+      await sendEmailVerification(userCredential.user);
       
       console.log('✅ Sign up successful:', userCredential.user.uid);
+      
+      // Sync user data with backend API
+      await this.syncUserWithBackend(userCredential.user);
+      
       return this.mapFirebaseUser(userCredential.user);
     } catch (error: any) {
       console.error('❌ Sign up error:', { code: error.code, message: error.message, error });
@@ -92,6 +102,10 @@ export class AuthService {
       provider.addScope('profile');
       
       const userCredential = await signInWithPopup(auth, provider);
+      
+      // Sync user data with backend API
+      await this.syncUserWithBackend(userCredential.user);
+      
       return this.mapFirebaseUser(userCredential.user);
     } catch (error: any) {
       throw new Error(this.getAuthErrorMessage(error.code));
@@ -103,7 +117,7 @@ export class AuthService {
    */
   async signOut(): Promise<void> {
     try {
-      await signOut(auth);
+      await firebaseSignOut(auth);
     } catch (error: any) {
       throw new Error('Failed to sign out. Please try again.');
     }
@@ -205,6 +219,37 @@ export class AuthService {
         },
       },
     };
+  }
+
+  /**
+   * Sync user data with backend API
+   */
+  private async syncUserWithBackend(firebaseUser: FirebaseUser): Promise<void> {
+    try {
+      const token = await getIdToken(firebaseUser);
+      
+      // Call backend API to sync user data
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || '/api'}/v1/auth/sync`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          uid: firebaseUser.uid,
+          email: firebaseUser.email,
+          name: firebaseUser.displayName,
+          emailVerified: firebaseUser.emailVerified,
+        }),
+      });
+
+      if (!response.ok) {
+        console.warn('Failed to sync user with backend:', response.status);
+      }
+    } catch (error) {
+      console.warn('Failed to sync user with backend:', error);
+      // Don't throw error here as authentication was successful
+    }
   }
 
   /**
