@@ -39,9 +39,12 @@ export class AuthService {
    */
   async signInWithEmail(email: string, password: string): Promise<User> {
     try {
+      console.log('🔐 Attempting sign in with:', { email, authConfig: auth.config });
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.log('✅ Sign in successful:', userCredential.user.uid);
       return this.mapFirebaseUser(userCredential.user);
     } catch (error: any) {
+      console.error('❌ Sign in error:', { code: error.code, message: error.message, error });
       throw new Error(this.getAuthErrorMessage(error.code));
     }
   }
@@ -65,13 +68,16 @@ export class AuthService {
    */
   async createAccount(email: string, password: string, name: string): Promise<User> {
     try {
+      console.log('📝 Attempting sign up with:', { email, name, authConfig: auth.config });
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       
       // Update profile with name
       await updateProfile(userCredential.user, { displayName: name });
       
+      console.log('✅ Sign up successful:', userCredential.user.uid);
       return this.mapFirebaseUser(userCredential.user);
     } catch (error: any) {
+      console.error('❌ Sign up error:', { code: error.code, message: error.message, error });
       throw new Error(this.getAuthErrorMessage(error.code));
     }
   }

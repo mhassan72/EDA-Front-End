@@ -13,7 +13,7 @@ vi.mock('@/config/firebase', () => ({
 
 // Mock Firebase Auth functions
 vi.mock('firebase/auth', () => ({
-  onAuthStateChanged: vi.fn((auth, callback) => {
+  onAuthStateChanged: vi.fn((_auth, _callback) => {
     // Return unsubscribe function
     return () => {};
   }),
@@ -44,6 +44,10 @@ Object.defineProperty(window, 'matchMedia', {
 
 // Mock IntersectionObserver
 global.IntersectionObserver = class IntersectionObserver {
+  root = null;
+  rootMargin = '';
+  thresholds = [];
+  
   constructor() {}
   observe() {
     return null;
@@ -54,7 +58,10 @@ global.IntersectionObserver = class IntersectionObserver {
   unobserve() {
     return null;
   }
-};
+  takeRecords() {
+    return [];
+  }
+} as any;
 
 // Mock ResizeObserver
 global.ResizeObserver = class ResizeObserver {

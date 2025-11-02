@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ImageIcon, 
   Wand2, 
-  Settings, 
   Download, 
   Trash2, 
-  Eye,
-  Loader2,
-  AlertCircle,
-  CreditCard
+  Eye
 } from 'lucide-react';
 import { 
   ImageGenerationRequest, 
@@ -58,7 +54,7 @@ export const ImageGenerationInterface: React.FC<ImageGenerationInterfaceProps> =
     steps: 20
   });
   
-  const [currentTask, setCurrentTask] = useState<string | null>(null);
+
   const [taskProgress, setTaskProgress] = useState<TaskProgress | null>(null);
   const [generatedImages, setGeneratedImages] = useState<GeneratedImage[]>([]);
   const [galleryImages, setGalleryImages] = useState<GeneratedImage[]>([]);
@@ -126,7 +122,7 @@ export const ImageGenerationInterface: React.FC<ImageGenerationInterfaceProps> =
       };
 
       const { taskId } = await imageService.generateImages(fullRequest);
-      setCurrentTask(taskId);
+
 
       // Subscribe to task updates
       const unsubscribe = imageService.subscribeToTaskUpdates(taskId, (progress) => {

@@ -1,6 +1,7 @@
 {
   "name": "ai-assistant-client",
   "version": "1.0.0",
+  "type": "module",
   "description": "AI Assistant Client with Real-time Credit System",
   "main": "src/index.tsx",
   "scripts": {

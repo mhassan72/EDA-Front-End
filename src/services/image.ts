@@ -3,9 +3,9 @@ import {
   ImageGenerationRequest, 
   GeneratedImage, 
   AIModel, 
-  ModelCategory,
+
   TaskProgress,
-  APIResponse 
+ 
 } from '@/types';
 
 export class ImageService {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';
 import { 
@@ -9,10 +9,8 @@ import {
   History,
   Settings,
   Bell,
-  Calendar,
   BarChart3,
   PieChart,
-  Activity,
   AlertCircle,
   CheckCircle,
   Clock
@@ -26,13 +24,13 @@ import {
   Tooltip, 
   ResponsiveContainer,
   PieChart as RechartsPieChart,
+  Pie,
   Cell,
-  BarChart,
-  Bar
+
 } from 'recharts';
 import { CreditBalance as CreditBalanceType } from '@/types';
 import { creditService } from '@/services/credit';
-import { format, subDays, startOfDay } from 'date-fns';
+import { format } from 'date-fns';
 
 interface CreditDashboardProps {
   balance: CreditBalanceType | undefined;
@@ -324,7 +322,7 @@ export const CreditDashboard: React.FC<CreditDashboardProps> = ({
                     paddingAngle={5}
                     dataKey="amount"
                   >
-                    {analytics.categoryBreakdown.map((entry, index) => (
+                    {analytics.categoryBreakdown.map((_entry, index) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>

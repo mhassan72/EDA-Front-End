@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { User } from 'firebase/auth';
 import { authService } from './services/auth';
 import { ImageGenerationInterface } from './components/ImageGeneration/ImageGenerationInterface';

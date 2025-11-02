@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';
 import { 
   History, 
-  Filter, 
   Download, 
   Search,
-  Calendar,
   ArrowUpRight,
   ArrowDownLeft,
-  ExternalLink,
   RefreshCw,
   ChevronLeft,
   ChevronRight,
-  Eye,
   X
 } from 'lucide-react';
 import { CreditTransaction, TransactionType, CreditSource } from '@/types';
@@ -102,7 +98,7 @@ export const TransactionHistory: React.FC<TransactionHistoryProps> = ({
       case CreditSource.ADMIN_ADJUSTMENT:
         return 'Admin Adjustment';
       default:
-        return source.replace('_', ' ');
+        return (source as string).replace('_', ' ');
     }
   };
 

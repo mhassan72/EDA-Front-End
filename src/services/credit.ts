@@ -6,7 +6,7 @@ import {
   PaymentResult,
   PaymentMethod,
   Notification,
-  APIResponse 
+ 
 } from '@/types';
 
 export class CreditService {

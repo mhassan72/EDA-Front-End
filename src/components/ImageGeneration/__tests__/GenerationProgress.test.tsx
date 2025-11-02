@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { GenerationProgress } from '../GenerationProgress';
@@ -17,8 +17,7 @@ const mockTaskProgress: TaskProgress = {
   status: 'running',
   progress: 45,
   message: 'Generating image...',
-  estimatedCompletion: new Date(Date.now() + 60000), // 1 minute from now
-  metadata: {}
+  estimatedCompletion: new Date(Date.now() + 60000) // 1 minute from now
 };
 
 describe('GenerationProgress', () => {
@@ -217,7 +216,7 @@ describe('GenerationProgress', () => {
     expect(document.querySelector('.text-green-600')).toBeInTheDocument();
 
     const failedTask = { ...mockTaskProgress, status: 'failed' as const };
-    const { rerender } = render(<GenerationProgress progress={0} taskProgress={failedTask} />);
+    render(<GenerationProgress progress={0} taskProgress={failedTask} />);
 
     // Failed status should have red color
     expect(document.querySelector('.text-red-600')).toBeInTheDocument();

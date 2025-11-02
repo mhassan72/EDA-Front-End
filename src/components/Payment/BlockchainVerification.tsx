@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';
 import { 
   Shield, 
@@ -35,7 +35,7 @@ export const BlockchainVerification: React.FC<BlockchainVerificationProps> = ({
     queryKey: ['blockchainVerification', transactionId],
     queryFn: () => creditService.verifyBlockchainTransaction(transactionId),
     enabled: isOpen && !!transactionId,
-    refetchInterval: (data) => data?.verified ? false : 10000, // Poll every 10s if not verified
+    refetchInterval: (data) => (data && 'verified' in data && data.verified) ? false : 10000, // Poll every 10s if not verified
   });
 
   const handleCopyTxId = (txId: string) => {
@@ -49,7 +49,7 @@ export const BlockchainVerification: React.FC<BlockchainVerificationProps> = ({
       return;
     }
     // This would trigger verification for a different transaction
-    toast.info('Manual verification not implemented in demo');
+    toast('Manual verification not implemented in demo');
   };
 
   const getStatusIcon = () => {

@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Download, 
   Trash2, 
-  Eye, 
   Search,
-  Filter,
   Grid3X3,
   List,
   RefreshCw,
-  Calendar,
   Image as ImageIcon,
   X,
   ZoomIn,
-  Share2,
   Copy
 } from 'lucide-react';
 import { GeneratedImage } from '@/types';

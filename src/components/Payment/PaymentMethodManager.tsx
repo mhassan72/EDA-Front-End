@@ -8,10 +8,7 @@ import {
   Trash2, 
   Star,
   Shield,
-  Check,
-  X,
-  Edit,
-  ExternalLink
+  X
 } from 'lucide-react';
 import { PaymentMethod } from '@/types';
 import { creditService } from '@/services/credit';

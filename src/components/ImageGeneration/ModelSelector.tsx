@@ -5,8 +5,7 @@ import {
   Zap, 
   DollarSign, 
   Star,
-  Clock,
-  Info
+  Clock
 } from 'lucide-react';
 import { AIModel } from '@/types';
 

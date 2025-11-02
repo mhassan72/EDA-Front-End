@@ -1,9 +1,9 @@
-import React from 'react';
+
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ImageGenerationInterface } from '../ImageGenerationInterface';
 import { imageService } from '@/services/image';
-import { ImageSize, ImageQuality, ImageStyle } from '@/types';
+import { ImageSize, ImageQuality, ImageStyle, ModelCategory } from '@/types';
 
 // Mock the image service
 vi.mock('@/services/image', () => ({
@@ -32,8 +32,9 @@ const mockModels = [
     id: 'flux-schnell',
     name: 'FLUX Schnell',
     description: 'Fast image generation',
-    category: 'image_generation' as const,
+    category: ModelCategory.IMAGE_GENERATION,
     provider: 'black-forest-labs',
+    apiEndpoint: 'https://api.example.com',
     isActive: true,
     capabilities: {
       maxTokens: 0,
@@ -43,8 +44,24 @@ const mockModels = [
       contextWindow: 0
     },
     pricing: {
-      costPerImage: 50,
-      minimumCost: 10
+      costPer1kInputTokens: 0,
+      costPer1kOutputTokens: 0,
+      minimumCost: 10,
+      currency: 'credits' as const
+    },
+    performance: {
+      averageLatency: 100,
+      tokensPerSecond: 0,
+      qualityScore: 85,
+      speedScore: 90,
+      costScore: 80,
+      reliabilityScore: 95
+    },
+    metadata: {
+      addedAt: new Date(),
+      lastUpdated: new Date(),
+      addedBy: 'system',
+      tags: ['fast', 'image']
     }
   }
 ];
@@ -60,6 +77,7 @@ const mockGeneratedImages = [
     prompt: 'A beautiful sunset',
     model: 'flux-schnell',
     createdAt: new Date(),
+    creditsUsed: 50,
   }
 ];
 
@@ -139,7 +157,7 @@ describe('ImageGenerationInterface', () => {
   });
 
   it('handles image generation successfully', async () => {
-    const mockSubscribe = vi.fn((taskId, callback) => {
+    const mockSubscribe = vi.fn((_taskId, callback) => {
       // Simulate progress updates
       setTimeout(() => callback(mockTaskProgress), 100);
       setTimeout(() => callback({ ...mockTaskProgress, status: 'completed', progress: 100 }), 200);
@@ -225,7 +243,7 @@ describe('ImageGenerationInterface', () => {
   });
 
   it('displays generated images after completion', async () => {
-    const mockSubscribe = vi.fn((taskId, callback) => {
+    const mockSubscribe = vi.fn((_taskId, callback) => {
       // Simulate completion
       setTimeout(() => callback({ ...mockTaskProgress, status: 'completed', progress: 100 }), 100);
       return () => {};
@@ -300,7 +318,7 @@ describe('ImageGenerationInterface', () => {
   });
 
   it('shows progress during generation', async () => {
-    const mockSubscribe = vi.fn((taskId, callback) => {
+    const mockSubscribe = vi.fn((_taskId, callback) => {
       // Simulate progress updates
       setTimeout(() => callback({ ...mockTaskProgress, progress: 25 }), 50);
       setTimeout(() => callback({ ...mockTaskProgress, progress: 50 }), 100);
@@ -329,7 +347,7 @@ describe('ImageGenerationInterface', () => {
   });
 
   it('handles generation errors gracefully', async () => {
-    const mockSubscribe = vi.fn((taskId, callback) => {
+    const mockSubscribe = vi.fn((_taskId, callback) => {
       // Simulate failure
       setTimeout(() => callback({ ...mockTaskProgress, status: 'failed', message: 'Generation failed' }), 100);
       return () => {};
@@ -362,7 +380,7 @@ describe('ImageGenerationInterface', () => {
   });
 
   it('updates UI state correctly during generation lifecycle', async () => {
-    const mockSubscribe = vi.fn((taskId, callback) => {
+    const mockSubscribe = vi.fn((_taskId, callback) => {
       // Simulate complete lifecycle
       setTimeout(() => callback({ ...mockTaskProgress, status: 'queued', progress: 0 }), 50);
       setTimeout(() => callback({ ...mockTaskProgress, status: 'running', progress: 50 }), 100);

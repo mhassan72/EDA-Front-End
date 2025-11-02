@@ -23,7 +23,7 @@ vi.mock('react-hot-toast', () => ({
 
 // Mock date-fns
 vi.mock('date-fns', () => ({
-  format: vi.fn((date, formatStr) => '2024-01-15 14:30:00'),
+  format: vi.fn((_date, _formatStr) => '2024-01-15 14:30:00'),
 }));
 
 const createWrapper = () => {
@@ -286,7 +286,7 @@ describe('BlockchainVerification', () => {
 
   it('shows loading state during verification', () => {
     vi.mocked(creditService.verifyBlockchainTransaction).mockImplementation(
-      () => new Promise(() => {}) // Never resolves
+      () => new Promise<any>(() => {}) // Never resolves
     );
 
     render(

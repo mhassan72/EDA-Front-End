@@ -269,7 +269,7 @@ describe('PaymentMethodManager', () => {
 
   it('shows loading state while fetching payment methods', () => {
     vi.mocked(creditService.getPaymentMethods).mockImplementation(
-      () => new Promise(() => {}) // Never resolves
+      () => new Promise<any>(() => {}) // Never resolves
     );
 
     render(
