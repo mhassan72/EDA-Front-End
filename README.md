@@ -13,6 +13,37 @@
 
 ---
 
+## 🔥 Recent Updates & Fixes
+
+### ✅ **Firebase Emulator Integration (Latest)**
+- **Demo Project Configuration**: Updated to use `demo-project` for seamless emulator development
+- **Authentication Fix**: Resolved client authentication issues with proper emulator connectivity
+- **Environment Variables**: Pre-configured for Firebase emulators with `VITE_USE_EMULATORS=true`
+- **Real-time Sync**: Enhanced Firebase integration for live balance updates and notifications
+- **Hosting Integration**: Client served via Firebase hosting emulator at `http://127.0.0.1:5002`
+
+### 🛠️ **Development Workflow**
+```bash
+# 1️⃣ Start Firebase emulators (from root directory)
+firebase emulators:start --only auth,firestore,database,hosting --project demo-project
+
+# 2️⃣ Access your application
+Frontend App:       http://127.0.0.1:5002  (Firebase Hosting)
+Development Server: http://localhost:3000   (Vite Dev Server)
+Emulator UI:        http://127.0.0.1:4000   (Firebase Emulator Suite)
+```
+
+### 🚀 **Ready-to-Use Features**
+- **🔐 Authentication**: Firebase Auth with emulator support
+- **💬 Real-time Chat**: Live AI conversations with typing indicators
+- **🎨 Image Generation**: Advanced AI image creation with progress tracking
+- **💳 Credit Management**: Real-time balance updates and transaction history
+- **💰 Payment Processing**: Multi-gateway payment support (Stripe, PayPal, Web3)
+- **🔔 Notifications**: In-app alerts and system notifications
+- **📱 PWA Support**: Offline functionality and native app experience
+
+---
+
 ## 🌟 Frontend Capabilities
 
 ### 💬 **AI Chat Interface**
@@ -117,11 +148,15 @@ cd client
 # 2️⃣ Install dependencies
 npm install
 
-# 3️⃣ Environment setup
+# 3️⃣ Environment setup (configured for demo-project)
 cp .env.example .env.local
-# Edit .env.local with your configuration 🔑
+# .env is already configured for Firebase emulators
 
-# 4️⃣ Start development server
+# 4️⃣ Start Firebase emulators (in root directory)
+cd .. && firebase emulators:start --only auth,firestore,database,hosting --project demo-project
+
+# 5️⃣ Start development (in client directory)
+cd client
 npm run dev          # 🚀 Start dev server (http://localhost:3000)
 npm run build        # 🏗️ Build for production
 npm run preview      # 👀 Preview production build
@@ -131,16 +166,18 @@ npm run lint         # 🔍 Lint code
 
 ### 🔑 Environment Configuration
 ```bash
-# 🔥 Firebase Configuration
-VITE_FIREBASE_API_KEY=your_firebase_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=your-project-id
-VITE_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+# 🔥 Firebase Configuration (Demo Project - Pre-configured)
+VITE_FIREBASE_API_KEY=demo-key
+VITE_FIREBASE_AUTH_DOMAIN=demo-project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=demo-project
+VITE_FIREBASE_STORAGE_BUCKET=demo-project.appspot.com
 VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
-VITE_FIREBASE_APP_ID=1:123456789:web:abcdef
+VITE_FIREBASE_APP_ID=1:123456789:web:demo-app-id
+VITE_FIREBASE_DATABASE_URL=https://demo-project-default-rtdb.firebaseio.com
+VITE_USE_EMULATORS=true
 
-# 🌐 API Configuration
-VITE_API_BASE_URL=http://localhost:5001/your-project/us-central1/api
+# 🌐 API Configuration (Emulator Endpoints)
+VITE_API_BASE_URL=http://127.0.0.1:5001/demo-project/us-central1/api
 VITE_API_VERSION=v1
 
 # 💳 Payment Configuration
@@ -512,6 +549,23 @@ describe('useAuth', () => {
 
 ### 🔥 **Firebase Authentication**
 ```typescript
+// Firebase configuration with emulator support
+const firebaseConfig = {
+  apiKey: "demo-key",
+  authDomain: "demo-project.firebaseapp.com",
+  projectId: "demo-project",
+  // ... other config
+};
+
+// Initialize Firebase with emulator connection
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+
+// Connect to emulators in development
+if (import.meta.env.DEV || import.meta.env.VITE_USE_EMULATORS === 'true') {
+  connectAuthEmulator(auth, 'http://127.0.0.1:9099', { disableWarnings: true });
+}
+
 // Authentication service
 export const authService = {
   async signIn(email: string, password: string) {
