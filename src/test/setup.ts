@@ -42,6 +42,38 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
+// Mock framer-motion
+vi.mock('framer-motion', () => ({
+  motion: {
+    div: 'div',
+    button: 'button',
+    span: 'span',
+    p: 'p',
+    h1: 'h1',
+    h2: 'h2',
+    h3: 'h3',
+    img: 'img',
+    input: 'input',
+    form: 'form',
+    section: 'section',
+    article: 'article',
+    nav: 'nav',
+    header: 'header',
+    footer: 'footer',
+    main: 'main',
+    aside: 'aside',
+  },
+  AnimatePresence: ({ children }: { children: React.ReactNode }) => children,
+  useAnimation: () => ({
+    start: vi.fn(),
+    stop: vi.fn(),
+    set: vi.fn(),
+  }),
+  useMotionValue: (initial: any) => ({ get: () => initial, set: vi.fn() }),
+  useTransform: (value: any, input: any, output: any) => value,
+  useSpring: (value: any) => value,
+}));
+
 // Mock IntersectionObserver
 global.IntersectionObserver = class IntersectionObserver {
   root = null;

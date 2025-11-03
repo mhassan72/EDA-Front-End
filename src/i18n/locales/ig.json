@@ -1,0 +1,60 @@
+{
+  "common": {
+    "loading": "Na-ebu...",
+    "error": "Njehie",
+    "success": "Ihe ọma",
+    "cancel": "Kagbuo",
+    "confirm": "Kwenye",
+    "save": "Chekwaa",
+    "delete": "Hichapụ",
+    "edit": "Dezie",
+    "close": "Mechie",
+    "back": "Laghachi azụ",
+    "next": "Osote",
+    "previous": "Nke gara aga",
+    "submit": "Ziga",
+    "search": "Chọọ",
+    "filter": "Kewaa",
+    "clear": "Kpochaa",
+    "select": "Họrọ",
+    "upload": "Bulite",
+    "download": "Budata",
+    "share": "Kesaa",
+    "copy": "Depụta",
+    "paste": "Tinye",
+    "cut": "Bee",
+    "undo": "Weghachi",
+    "redo": "Megharia"
+  },
+  "navigation": {
+    "home": "Ụlọ",
+    "chat": "Mkparịta ụka",
+    "imageGeneration": "Ime Foto",
+    "education": "Agụmakwụkwọ",
+    "profile": "Profaịlụ",
+    "settings": "Nhazi",
+    "help": "Enyemaka",
+    "about": "Maka",
+    "signOut": "Pụọ"
+  },
+  "greetings": {
+    "welcome": "Nnọọ!",
+    "goodMorning": "Ụtụtụ ọma!",
+    "goodAfternoon": "Ehihie ọma!",
+    "goodEvening": "Mgbede ọma!",
+    "howCanIHelp": "Kedu ka m ga-esi nyere gị aka taa?",
+    "letsLearn": "Ka anyị mụta ihe ọhụrụ!",
+    "readyToStart": "Ị dị njikere ịmalite?"
+  },
+  "encouragement": {
+    "greatJob": "Ọrụ dị ukwuu!",
+    "keepGoing": "Gaa n'ihu!",
+    "almostThere": "Ị fọrọ nke nta!",
+    "wellDone": "I mere nke ọma!",
+    "excellent": "Ọ dị mma nke ukwuu!",
+    "goodWork": "Ọrụ ọma!",
+    "tryAgain": "Adala obi, nwaa ọzọ!",
+    "youCanDoIt": "I nwere ike ime ya!",
+    "learningProgress": "Ị na-eme ọganihu dị mma!"
+  }
+}

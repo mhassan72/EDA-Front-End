@@ -48,6 +48,7 @@
     "recharts": "^2.8.0",
     "socket.io-client": "^4.7.4",
     "tailwind-merge": "^2.0.0",
+    "tailwindcss-rtl": "^0.9.0",
     "viem": "^1.19.11",
     "wagmi": "^1.4.13",
     "web3": "^4.3.0"

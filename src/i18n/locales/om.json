@@ -1,0 +1,60 @@
+{
+  "common": {
+    "loading": "Fe'aa jira...",
+    "error": "Dogoggora",
+    "success": "Milkaa'ina",
+    "cancel": "Dhiisi",
+    "confirm": "Mirkaneessi",
+    "save": "Olkaa'i",
+    "delete": "Haqi",
+    "edit": "Fooyyessi",
+    "close": "Cufii",
+    "back": "Duubatti deebi'i",
+    "next": "Itti aanaa",
+    "previous": "Dura",
+    "submit": "Ergi",
+    "search": "Barbaadi",
+    "filter": "Cali",
+    "clear": "Qulqulleessi",
+    "select": "Filadhu",
+    "upload": "Ol kaa'i",
+    "download": "Gadi buusi",
+    "share": "Qooddadhu",
+    "copy": "Garagalchi",
+    "paste": "Maxxansi",
+    "cut": "Muri",
+    "undo": "Duubatti deebisi",
+    "redo": "Irra deebi'i"
+  },
+  "navigation": {
+    "home": "Mana",
+    "chat": "Haasa'a",
+    "imageGeneration": "Suuraa Uumuu",
+    "education": "Barnoota",
+    "profile": "Seenaa",
+    "settings": "Qindaa'ina",
+    "help": "Gargaarsa",
+    "about": "Waa'ee",
+    "signOut": "Ba'i"
+  },
+  "greetings": {
+    "welcome": "Baga nagaan dhuftan!",
+    "goodMorning": "Akkam bultan!",
+    "goodAfternoon": "Akkam ooltan!",
+    "goodEvening": "Akkam galgaltan!",
+    "howCanIHelp": "Harʼa akkamiin isin gargaaruu dandaʼa?",
+    "letsLearn": "Waan haaraa barannu!",
+    "readyToStart": "Jalqabuuf qophaaʼaniittuu?"
+  },
+  "encouragement": {
+    "greatJob": "Hojii guddaa!",
+    "keepGoing": "Itti fufi!",
+    "almostThere": "Dhihaattan!",
+    "wellDone": "Gaarii hojjettan!",
+    "excellent": "Baay'ee gaarii!",
+    "goodWork": "Hojii gaarii!",
+    "tryAgain": "Hin kuufatin, ammas yaali!",
+    "youCanDoIt": "Ni dandeessu!",
+    "learningProgress": "Guddina gaarii argachaa jirtu!"
+  }
+}

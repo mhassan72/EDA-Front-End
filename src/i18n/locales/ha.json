@@ -1,0 +1,60 @@
+{
+  "common": {
+    "loading": "Ana lodi...",
+    "error": "Kuskure",
+    "success": "Nasara",
+    "cancel": "Soke",
+    "confirm": "Tabbatar",
+    "save": "Ajiye",
+    "delete": "Share",
+    "edit": "Gyara",
+    "close": "Rufe",
+    "back": "Koma baya",
+    "next": "Na gaba",
+    "previous": "Na baya",
+    "submit": "Aika",
+    "search": "Nema",
+    "filter": "Tace",
+    "clear": "Share",
+    "select": "Zaba",
+    "upload": "Loda",
+    "download": "Sauke",
+    "share": "Raba",
+    "copy": "Kwafi",
+    "paste": "Manna",
+    "cut": "Yanke",
+    "undo": "Koma baya",
+    "redo": "Sake yi"
+  },
+  "navigation": {
+    "home": "Gida",
+    "chat": "Hira",
+    "imageGeneration": "Yin Hoto",
+    "education": "Ilimi",
+    "profile": "Bayani",
+    "settings": "Saiti",
+    "help": "Taimako",
+    "about": "Game da",
+    "signOut": "Fita"
+  },
+  "greetings": {
+    "welcome": "Maraba!",
+    "goodMorning": "Barka da safe!",
+    "goodAfternoon": "Barka da rana!",
+    "goodEvening": "Barka da yamma!",
+    "howCanIHelp": "Ta yaya zan iya taimaka muku yau?",
+    "letsLearn": "Mu koyi wani abu sabo!",
+    "readyToStart": "Kun shirya ku fara?"
+  },
+  "encouragement": {
+    "greatJob": "Aiki mai kyau!",
+    "keepGoing": "Ku ci gaba!",
+    "almostThere": "Kun kusa kai!",
+    "wellDone": "Kun yi kyau!",
+    "excellent": "Kyakkyawa!",
+    "goodWork": "Aiki mai kyau!",
+    "tryAgain": "Kar ku daina, ku sake gwadawa!",
+    "youCanDoIt": "Za ku iya!",
+    "learningProgress": "Kuna samun ci gaba mai kyau!"
+  }
+}

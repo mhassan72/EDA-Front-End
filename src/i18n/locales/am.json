@@ -1,0 +1,60 @@
+{
+  "common": {
+    "loading": "እየጫነ ነው...",
+    "error": "ስህተት",
+    "success": "ተሳክቷል",
+    "cancel": "ሰርዝ",
+    "confirm": "አረጋግጥ",
+    "save": "አስቀምጥ",
+    "delete": "ሰርዝ",
+    "edit": "አርም",
+    "close": "ዝጋ",
+    "back": "ተመለስ",
+    "next": "ቀጣይ",
+    "previous": "ቀዳሚ",
+    "submit": "ላክ",
+    "search": "ፈልግ",
+    "filter": "አጣራ",
+    "clear": "አጽዳ",
+    "select": "ምረጥ",
+    "upload": "ስቀል",
+    "download": "አውርድ",
+    "share": "አጋራ",
+    "copy": "ቅዳ",
+    "paste": "ለጥፍ",
+    "cut": "ቁረጥ",
+    "undo": "ተመለስ",
+    "redo": "እንደገና አድርግ"
+  },
+  "navigation": {
+    "home": "ቤት",
+    "chat": "ውይይት",
+    "imageGeneration": "ምስል ፈጠራ",
+    "education": "ትምህርት",
+    "profile": "መገለጫ",
+    "settings": "ቅንብሮች",
+    "help": "እርዳታ",
+    "about": "ስለ",
+    "signOut": "ውጣ"
+  },
+  "greetings": {
+    "welcome": "እንኳን ደህና መጡ!",
+    "goodMorning": "እንደምን አደሩ!",
+    "goodAfternoon": "እንደምን ዋሉ!",
+    "goodEvening": "እንደምን አመሹ!",
+    "howCanIHelp": "ዛሬ እንዴት ልረዳዎት እችላለሁ?",
+    "letsLearn": "አዲስ ነገር እንማር!",
+    "readyToStart": "ለመጀመር ዝግጁ ነዎት?"
+  },
+  "encouragement": {
+    "greatJob": "በጣም ጥሩ ስራ!",
+    "keepGoing": "ቀጥል!",
+    "almostThere": "ተቃርበዋል!",
+    "wellDone": "በጥሩ ሁኔታ ሰርተዋል!",
+    "excellent": "በጣም ጥሩ!",
+    "goodWork": "ጥሩ ስራ!",
+    "tryAgain": "አይሰለቹ፣ እንደገና ሞክሩ!",
+    "youCanDoIt": "ማድረግ ይችላሉ!",
+    "learningProgress": "ጥሩ እድገት እያደረጉ ነው!"
+  }
+}

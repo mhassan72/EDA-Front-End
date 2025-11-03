@@ -1,0 +1,60 @@
+{
+  "common": {
+    "loading": "N gbe jade...",
+    "error": "Aṣiṣe",
+    "success": "Aṣeyọri",
+    "cancel": "Fagilee",
+    "confirm": "Jẹrisi",
+    "save": "Fi pamọ",
+    "delete": "Pa rẹ",
+    "edit": "Ṣatunṣe",
+    "close": "Ti",
+    "back": "Pada sẹhin",
+    "next": "Tókàn",
+    "previous": "Tẹlẹ",
+    "submit": "Fi silẹ",
+    "search": "Wa",
+    "filter": "Ṣe àṣẹ",
+    "clear": "Pa rẹ",
+    "select": "Yan",
+    "upload": "Gbe soke",
+    "download": "Gbe silẹ",
+    "share": "Pin",
+    "copy": "Ṣe ẹda",
+    "paste": "Lẹ",
+    "cut": "Ge",
+    "undo": "Pada sẹhin",
+    "redo": "Tun ṣe"
+  },
+  "navigation": {
+    "home": "Ile",
+    "chat": "Ibaraẹnisọrọ",
+    "imageGeneration": "Ṣiṣẹda Aworan",
+    "education": "Ẹkọ",
+    "profile": "Profaili",
+    "settings": "Eto",
+    "help": "Iranlọwọ",
+    "about": "Nipa",
+    "signOut": "Jade"
+  },
+  "greetings": {
+    "welcome": "Kaabo!",
+    "goodMorning": "E kaaro!",
+    "goodAfternoon": "E kaasan!",
+    "goodEvening": "E kaalẹ!",
+    "howCanIHelp": "Bawo ni mo ṣe le ran yin lọwọ loni?",
+    "letsLearn": "Jẹ ka kọ nkan titun!",
+    "readyToStart": "Ṣe o ti ṣetan lati bẹrẹ?"
+  },
+  "encouragement": {
+    "greatJob": "Iṣẹ nla!",
+    "keepGoing": "Tẹsiwaju!",
+    "almostThere": "O ti fẹrẹ de!",
+    "wellDone": "O ṣe daradara!",
+    "excellent": "O dara julọ!",
+    "goodWork": "Iṣẹ rere!",
+    "tryAgain": "Maṣe juwọ, gbiyanju lẹẹkansi!",
+    "youCanDoIt": "O le ṣe!",
+    "learningProgress": "O n ṣe ilọsiwaju to dara!"
+  }
+}

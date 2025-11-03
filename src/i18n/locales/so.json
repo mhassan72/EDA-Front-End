@@ -1,0 +1,60 @@
+{
+  "common": {
+    "loading": "Waa la rarayo...",
+    "error": "Qalad",
+    "success": "Guul",
+    "cancel": "Jooji",
+    "confirm": "Xaqiiji",
+    "save": "Kaydi",
+    "delete": "Tirtir",
+    "edit": "Wax ka beddel",
+    "close": "Xir",
+    "back": "Dib u noqo",
+    "next": "Xiga",
+    "previous": "Hore",
+    "submit": "Dir",
+    "search": "Raadi",
+    "filter": "Kala saar",
+    "clear": "Nadiifi",
+    "select": "Dooro",
+    "upload": "Soo rar",
+    "download": "Soo dejiso",
+    "share": "La wadaag",
+    "copy": "Nuqul",
+    "paste": "Dhig",
+    "cut": "Jar",
+    "undo": "Dib u celi",
+    "redo": "Dib u samee"
+  },
+  "navigation": {
+    "home": "Guriga",
+    "chat": "Sheeko",
+    "imageGeneration": "Sawir Samyn",
+    "education": "Waxbarasho",
+    "profile": "Astaanta",
+    "settings": "Dejinta",
+    "help": "Caawimaad",
+    "about": "Ku saabsan",
+    "signOut": "Ka bax"
+  },
+  "greetings": {
+    "welcome": "Soo dhawoow!",
+    "goodMorning": "Subax wanaagsan!",
+    "goodAfternoon": "Galab wanaagsan!",
+    "goodEvening": "Fiid wanaagsan!",
+    "howCanIHelp": "Sidee baan kaa caawin karaa maanta?",
+    "letsLearn": "Aan wax cusub baranno!",
+    "readyToStart": "Ma diyaar u tahay inaad bilowdo?"
+  },
+  "encouragement": {
+    "greatJob": "Shaqo weyn!",
+    "keepGoing": "Sii wad!",
+    "almostThere": "Waxaad ku dhow tahay!",
+    "wellDone": "Si fiican ayaad u samaysay!",
+    "excellent": "Aad u fiican!",
+    "goodWork": "Shaqo wanaagsan!",
+    "tryAgain": "Ha quusan, mar kale isku day!",
+    "youCanDoIt": "Waad awoodaa!",
+    "learningProgress": "Horumar wanaagsan ayaad samaysay!"
+  }
+}

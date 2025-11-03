@@ -29,6 +29,10 @@ export type { LoadingSpinnerProps, LoadingProps } from './LoadingSpinner';
 export { showToast, ToastProvider } from './Toast';
 export type { ToastProps } from './Toast';
 
+export { ThemeSelector } from './ThemeSelector';
+
+export { LanguageSelector } from './LanguageSelector';
+
 // Layout Components
 export { Container } from './Container';
 export type { ContainerProps } from './Container';
