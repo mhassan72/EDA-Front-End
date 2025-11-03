@@ -125,6 +125,43 @@ vi.mock('@/services/auth', () => ({
   },
 }));
 
+vi.mock('@/services/api', () => ({
+  apiService: {
+    get: vi.fn(),
+    post: vi.fn(),
+    put: vi.fn(),
+    delete: vi.fn(),
+    stream: vi.fn(),
+  },
+}));
+
+vi.mock('@/services/chat', () => ({
+  chatService: {
+    initialize: vi.fn(() => Promise.resolve()),
+    sendMessage: vi.fn(),
+    loadConversation: vi.fn(),
+    loadMoreMessages: vi.fn(),
+    createConversation: vi.fn(),
+    deleteConversation: vi.fn(),
+    getConnectionStatus: vi.fn(() => 'connected'),
+    onConnectionStatusChange: vi.fn(() => () => {}),
+    disconnect: vi.fn(),
+    setStreamingOptions: vi.fn(),
+  },
+}));
+
+vi.mock('@/services/websocket', () => ({
+  webSocketService: {
+    connect: vi.fn(() => Promise.resolve()),
+    disconnect: vi.fn(),
+    send: vi.fn(),
+    on: vi.fn(() => () => {}),
+    onConnectionStatusChange: vi.fn(() => () => {}),
+    getConnectionStatus: vi.fn(() => 'connected'),
+    isConnected: vi.fn(() => true),
+  },
+}));
+
 vi.mock('@/services/image', () => ({
   imageService: {
     getImageModels: vi.fn(() => Promise.resolve([])),
