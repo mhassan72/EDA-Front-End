@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MessageInput } from '../MessageInput';
+import { beforeEach } from 'node:test';
 
 describe('MessageInput', () => {
   const mockOnSendMessage = vi.fn();
@@ -128,10 +129,10 @@ describe('MessageInput', () => {
     
     const input = screen.getByPlaceholderText('Type your message...');
     
-    await user.type(input, 'Test msg');
+    await user.type(input, 'Test msgs');
     
-    // Should show character count when over 80% of limit
-    expect(screen.getByText('8/10')).toBeInTheDocument();
+    // Should show character count when over 80% of limit (9 > 8)
+    expect(screen.getByText('9/10')).toBeInTheDocument();
   });
 
   it('shows input hints when focused', async () => {
