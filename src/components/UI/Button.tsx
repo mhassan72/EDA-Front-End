@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { clsx } from 'clsx';
 import { Loader2 } from 'lucide-react';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onAnimationStart' | 'onAnimationEnd' | 'onDragStart' | 'onDrag' | 'onDragEnd'> {
   variant?: 'primary' | 'secondary' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   loading?: boolean;

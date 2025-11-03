@@ -70,7 +70,7 @@ vi.mock('framer-motion', () => ({
     set: vi.fn(),
   }),
   useMotionValue: (initial: any) => ({ get: () => initial, set: vi.fn() }),
-  useTransform: (value: any, input: any, output: any) => value,
+  useTransform: (value: any, _input: any, _output: any) => value,
   useSpring: (value: any) => value,
 }));
 

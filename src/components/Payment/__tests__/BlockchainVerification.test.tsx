@@ -14,10 +14,11 @@ vi.mock('@/services/credit', () => ({
 
 // Mock react-hot-toast
 vi.mock('react-hot-toast', () => {
-  const mockToast = vi.fn();
-  mockToast.success = vi.fn();
-  mockToast.error = vi.fn();
-  mockToast.info = vi.fn();
+  const mockToast = Object.assign(vi.fn(), {
+    success: vi.fn(),
+    error: vi.fn(),
+    info: vi.fn(),
+  });
   
   return {
     default: mockToast
